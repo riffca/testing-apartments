@@ -7,7 +7,7 @@
 
 		<div class="apartment__likes">
 			<div class="apartment__show-likes">{{ apartment.likes }}</div>
-			<div class="apartment__click" @click="$store.dispatch('apartments/likeApartment',apartment)">like</div>
+			<heartIcon @click="$store.dispatch('apartments/likeApartment',apartment)" class="apartment__heart-icon" />
 		</div>
 
 	</div>
@@ -15,17 +15,15 @@
 </template>
 
 <script>
+import heartIcon from './heart.svg'
 export default {
 	props: {
 		apartment: Object
 	},
 	name: 'ApartmentPost',
-
-	data () {
-		return {
-
-		}
-	}
+	components: {
+		heartIcon
+	},
 }
 </script>
 
@@ -39,25 +37,20 @@ export default {
 	flex: 1;
 	padding: 2vw;
 
-	&__click {
-
-		cursor: pointer;
-		padding: 2vw;
+	&__heart-icon {
+		max-width: 3vw;
 		&:hover {
-			color: grey;
+			fill: grey;
+			cursor: pointer;
 		}
 	}
+
 
 	&__show-likes {
 		margin: 2vw;
 
 	}
 
-
-	&__logo {
-
-
-	}
 
 }
 
