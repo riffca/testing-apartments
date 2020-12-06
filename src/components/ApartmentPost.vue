@@ -43,7 +43,14 @@ export default {
 			fill: grey;
 			cursor: pointer;
 		}
+		@media screen and (max-width: 400px) {
+			max-width: 7vw;
+				
+		}
+
 	}
+
+
 
 
 	&__show-likes {
